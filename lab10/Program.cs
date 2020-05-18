@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace lab10
 {
@@ -6,58 +7,92 @@ namespace lab10
     {
         static void Main(string[] args)
         {
-            Task task = new Task("Do lab 11", new ToDoGroup());
-            task.ShowGroup();
-            task.Group = new InProcessGroup();
-            task.ShowGroup();
-            task.Group = new DoneGroup();
-            task.ShowGroup();
+            User user = new User("Yelmanov Bohdan");
+            user.AddTask("TO DO smth");
+
+            TaskHistory history = new TaskHistory();
+            history.History.Push(user.SaveState());
+            user.ShowTasks();
+
+            user.AddTask("TO DO smth 2.0");
+            user.ShowTasks();
+
+            user.RestoreState(history.GetLast());
+            user.ShowTasks();
+
 
         }
     }
-    interface IGroup
-    {
-        void ShowGroup();
-    }
 
-    class ToDoGroup : IGroup
+    // Originator
+    
+    class User
     {
-        public void ShowGroup()
+        public string Fullname { get; set; }
+        public List<string> Tasks = new List<string>();
+
+        public User(string fullname)
         {
-            Console.WriteLine("Группа: TO DO");
+            Fullname = fullname;
+        }
+
+        public void AddTask(string name)
+        {
+            this.Tasks.Add(name);
+        }
+
+        public void ShowTasks()
+        {
+            foreach (string i in this.Tasks)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        public TaskMemento SaveState()
+        {
+            Console.WriteLine("Сохранение.");
+            List<string> backup = new List<string>();
+            foreach (string task in Tasks)
+            {
+                backup.Add(task);
+            }
+            return new TaskMemento(backup);
+        }
+
+        public void RestoreState(TaskMemento memento)
+        {
+            this.Tasks = memento.Tasks;
+            
+            Console.WriteLine("Восстановление");
         }
     }
 
-    class InProcessGroup : IGroup
+    class TaskMemento
     {
-        public void ShowGroup()
+        public List<string> Tasks { get; set; }
+
+        public TaskMemento(List<string> tasks)
         {
-            Console.WriteLine("Группа: В разработке");
+            this.Tasks = tasks;
         }
     }
 
-    class DoneGroup : IGroup
-    {
-        public void ShowGroup()
-        {
-            Console.WriteLine("Группа: Сделано");
-        }
-    }
-    class Task
-    {
-        protected string Name;
 
-        public Task(string name, IGroup mov)
+    // Caretaker
+    class TaskHistory
+    {
+        public Stack<TaskMemento> History;
+        public TaskHistory()
         {
-            Name = name;
-            Group = mov;
+            History = new Stack<TaskMemento>();
         }
 
-        public IGroup Group { private get; set; }
-        public void ShowGroup()
+        public TaskMemento GetLast()
         {
-            Group.ShowGroup();
+            return History.Pop();
         }
+
     }
 
 }
