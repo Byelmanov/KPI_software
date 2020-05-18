@@ -6,68 +6,93 @@ namespace lab10
     {
         static void Main(string[] args)
         {
-            Developer groupDeveloper = new GroupDeveloper("Lastname Firtsname");
-            Object group = groupDeveloper.Create("TO DO");
-
-            Developer taskDeveloper = new TaskDeveloper("Lastname Firstname");
-            Object task = taskDeveloper.Create("do laboratory work");
-
+            Facade facade = new Facade("Yelmanov Bohdan");
+            facade.AddGroup("Group1");
+            facade.AddTask("New one", "Group1");
         }
     }
-    // абстрактный класс создателя групп и задач
-    abstract class Developer
+
+    public class Facade
     {
+        public DB Obj = new DB();
         public string Fullname { get; set; }
-    
-        // фабричный метод
-        abstract public MySystem Create(string name);
-    }
-    // создает группы
-    class GroupDeveloper : Developer
-    {
-        public GroupDeveloper(string fullname)
+
+        public Facade(string fullname)
         {
-            Fullname = fullname;
+            if(fullname != null)
+            {
+                Fullname = fullname;
+            }
         }
-        public override MySystem Create(string name)
+
+        public Task AddTask(string name, string groupName)
         {
+            Obj.Write();
+            return new Task(name, groupName);
+        }
+
+        public Group AddGroup(string name)
+        {
+            Obj.Write();
             return new Group(name);
         }
     }
-    // создает задачи
-    class TaskDeveloper : Developer
-    {
-        public TaskDeveloper(string fullname)
-        {
-            Fullname = fullname;
-        }
-        public override MySystem Create(string name)
-        {
-            return new Task(name);
-        }
-    }
 
-    abstract class MySystem
-    { }
-
-    class Group : MySystem
+    public class Task
     {
         public string Name { get; set; }
+        public string GroupName { get; set; }
+
+        public Task(string name, string groupName)
+        {
+            if(name != null)
+            {
+                Name = name;
+            }
+
+            if(groupName != null)
+            {
+                GroupName = groupName;
+            }
+
+            Console.WriteLine("Задача создана");
+        }
+
+    }
+
+    public class Group
+    {
+        public string Name { get; set; }
+
         public Group(string name)
         {
-            Name = name;
-            string output = String.Format("Группа создана - {0}", Name);
-            Console.WriteLine(output);
+            if(name != null)
+            {
+                Name = name;
+            }
+
+            Console.WriteLine("Группа создана");
         }
     }
-    class Task : MySystem
+
+    public class DB
     {
         public string Name { get; set; }
-        public Task(string name)
+        public string Password { get; set; }
+        public string TableName { get; set; }
+
+        public DB()
+        { }
+
+        public string Select()
         {
-            Name = name;
-            string output = String.Format("Задача создана - {0}", Name);
-            Console.WriteLine(output);
+            return "tasks";
+        }
+
+        public void Write()
+        {
+            Console.WriteLine("Writing to DB");
         }
     }
+    
 }
