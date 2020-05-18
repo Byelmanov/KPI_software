@@ -6,93 +6,58 @@ namespace lab10
     {
         static void Main(string[] args)
         {
-            Facade facade = new Facade("Yelmanov Bohdan");
-            facade.AddGroup("Group1");
-            facade.AddTask("New one", "Group1");
+            Task task = new Task("Do lab 11", new ToDoGroup());
+            task.ShowGroup();
+            task.Group = new InProcessGroup();
+            task.ShowGroup();
+            task.Group = new DoneGroup();
+            task.ShowGroup();
+
         }
     }
-
-    public class Facade
+    interface IGroup
     {
-        public DB Obj = new DB();
-        public string Fullname { get; set; }
-
-        public Facade(string fullname)
-        {
-            if(fullname != null)
-            {
-                Fullname = fullname;
-            }
-        }
-
-        public Task AddTask(string name, string groupName)
-        {
-            Obj.Write();
-            return new Task(name, groupName);
-        }
-
-        public Group AddGroup(string name)
-        {
-            Obj.Write();
-            return new Group(name);
-        }
+        void ShowGroup();
     }
 
-    public class Task
+    class ToDoGroup : IGroup
     {
-        public string Name { get; set; }
-        public string GroupName { get; set; }
-
-        public Task(string name, string groupName)
+        public void ShowGroup()
         {
-            if(name != null)
-            {
-                Name = name;
-            }
-
-            if(groupName != null)
-            {
-                GroupName = groupName;
-            }
-
-            Console.WriteLine("Задача создана");
+            Console.WriteLine("Группа: TO DO");
         }
-
     }
 
-    public class Group
+    class InProcessGroup : IGroup
     {
-        public string Name { get; set; }
-
-        public Group(string name)
+        public void ShowGroup()
         {
-            if(name != null)
-            {
-                Name = name;
-            }
-
-            Console.WriteLine("Группа создана");
+            Console.WriteLine("Группа: В разработке");
         }
     }
 
-    public class DB
+    class DoneGroup : IGroup
     {
-        public string Name { get; set; }
-        public string Password { get; set; }
-        public string TableName { get; set; }
-
-        public DB()
-        { }
-
-        public string Select()
+        public void ShowGroup()
         {
-            return "tasks";
-        }
-
-        public void Write()
-        {
-            Console.WriteLine("Writing to DB");
+            Console.WriteLine("Группа: Сделано");
         }
     }
-    
+    class Task
+    {
+        protected string Name;
+
+        public Task(string name, IGroup mov)
+        {
+            Name = name;
+            Group = mov;
+        }
+
+        public IGroup Group { private get; set; }
+        public void ShowGroup()
+        {
+            Group.ShowGroup();
+        }
+    }
+
 }
