@@ -1,38 +1,45 @@
 ﻿<Properties StartupConfiguration="{7D8584D5-02CE-40C2-BB60-4086BC289D1A}|Default">
   <MonoDevelop.Ide.ItemProperties.Catalog.DAL.Tests FirstBuild="True" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DAL/EF/EFUnitOfWork.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DAL/BLL/Services/Impl/TaskService.cs">
     <Files>
-      <File FileName="DAL/DAL.Tests/TestTaskRepository.cs" Line="16" Column="1" />
-      <File FileName="DAL/DAL.Tests/BaseRepositoryUnitTests.cs" Line="5" Column="7" />
-      <File FileName="DAL/Repositories/Impl/BaseRepository.cs" Line="43" Column="1" />
-      <File FileName="DAL/EF/EFUnitOfWork.cs" Line="11" Column="11" />
+      <File FileName="DAL/BLL/Services/Impl/TaskService.cs" Line="9" Column="20" />
+      <File FileName="DAL/BLL/DTO/TaskDTO.cs" Line="1" Column="1" />
+      <File FileName="DAL/BLL.Tests/TaskServiceTests.cs" Line="34" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="lab10" expanded="True">
             <Node name="Catalog" expanded="True">
-              <Node name="DAL" expanded="True">
-                <Node name="DAL.Tests" expanded="True" />
-                <Node name="EF" expanded="True">
-                  <Node name="EFUnitOfWork.cs" selected="True" />
-                </Node>
-                <Node name="Repositories" expanded="True">
-                  <Node name="Impl" expanded="True" />
+              <Node name="BLL" expanded="True">
+                <Node name="DTO" expanded="True" />
+                <Node name="Services" expanded="True">
+                  <Node name="Impl" expanded="True">
+                    <Node name="TaskService.cs" selected="True" />
+                  </Node>
+                  <Node name="Interfaces" expanded="True" />
                 </Node>
               </Node>
-              <Node name="DAL.Tests" expanded="True" />
+              <Node name="BLL.Tests" expanded="True" />
+              <Node name="CCL" expanded="True">
+                <Node name="Security" expanded="True">
+                  <Node name="Identity" expanded="True" />
+                </Node>
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Catalog.BLL FirstBuild="True" />
   <MonoDevelop.Ide.ItemProperties.lab10 PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
+  <MonoDevelop.Ide.ItemProperties.Catalog.BLL.Tests FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Catalog.CCL FirstBuild="True" />
 </Properties>
