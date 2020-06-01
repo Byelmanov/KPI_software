@@ -1,0 +1,4 @@
+/Users/bohdanyelmanov/Desktop/Homework/6 semester/PO/lab12.2/DAL/obj/Debug/netcoreapp3.1/DAL.csprojAssemblyReference.cache
+/Users/bohdanyelmanov/Desktop/Homework/6 semester/PO/lab12.2/DAL/obj/Debug/netcoreapp3.1/DAL.csproj.CoreCompileInputs.cache
+/Users/bohdanyelmanov/Desktop/Homework/6 semester/PO/lab12.2/DAL/obj/Debug/netcoreapp3.1/DAL.AssemblyInfoInputs.cache
+/Users/bohdanyelmanov/Desktop/Homework/6 semester/PO/lab12.2/DAL/obj/Debug/netcoreapp3.1/DAL.AssemblyInfo.cs

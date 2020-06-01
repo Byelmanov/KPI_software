@@ -3,6 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab10", "lab10\lab10.csproj", "{7D8584D5-02CE-40C2-BB60-4086BC289D1A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{184884F6-43E7-430B-AC59-FEBD245B9793}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{E3A80724-4A75-46B7-9378-AB70E64FEA3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL.Tests", "DAL\DAL.Tests\DAL.Tests.csproj", "{CC08E081-6F31-4371-9077-3A8CA2A88CEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|anycpu = Debug|anycpu
@@ -13,5 +19,17 @@ Global
 		{7D8584D5-02CE-40C2-BB60-4086BC289D1A}.Debug|anycpu.Build.0 = Debug|anycpu
 		{7D8584D5-02CE-40C2-BB60-4086BC289D1A}.Release|anycpu.ActiveCfg = Release|anycpu
 		{7D8584D5-02CE-40C2-BB60-4086BC289D1A}.Release|anycpu.Build.0 = Release|anycpu
+		{E3A80724-4A75-46B7-9378-AB70E64FEA3B}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{E3A80724-4A75-46B7-9378-AB70E64FEA3B}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{E3A80724-4A75-46B7-9378-AB70E64FEA3B}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{E3A80724-4A75-46B7-9378-AB70E64FEA3B}.Release|anycpu.Build.0 = Release|Any CPU
+		{CC08E081-6F31-4371-9077-3A8CA2A88CEA}.Debug|anycpu.ActiveCfg = Debug|Any CPU
+		{CC08E081-6F31-4371-9077-3A8CA2A88CEA}.Debug|anycpu.Build.0 = Debug|Any CPU
+		{CC08E081-6F31-4371-9077-3A8CA2A88CEA}.Release|anycpu.ActiveCfg = Release|Any CPU
+		{CC08E081-6F31-4371-9077-3A8CA2A88CEA}.Release|anycpu.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E3A80724-4A75-46B7-9378-AB70E64FEA3B} = {184884F6-43E7-430B-AC59-FEBD245B9793}
+		{CC08E081-6F31-4371-9077-3A8CA2A88CEA} = {184884F6-43E7-430B-AC59-FEBD245B9793}
 	EndGlobalSection
 EndGlobal

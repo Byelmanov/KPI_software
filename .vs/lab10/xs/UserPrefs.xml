@@ -1,14 +1,27 @@
 ﻿<Properties StartupConfiguration="{7D8584D5-02CE-40C2-BB60-4086BC289D1A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="lab10/Program.cs">
+  <MonoDevelop.Ide.ItemProperties.Catalog.DAL.Tests FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DAL/EF/EFUnitOfWork.cs">
     <Files>
-      <File FileName="lab10/Program.cs" Line="18" Column="6" />
+      <File FileName="DAL/DAL.Tests/TestTaskRepository.cs" Line="16" Column="1" />
+      <File FileName="DAL/DAL.Tests/BaseRepositoryUnitTests.cs" Line="5" Column="7" />
+      <File FileName="DAL/Repositories/Impl/BaseRepository.cs" Line="43" Column="1" />
+      <File FileName="DAL/EF/EFUnitOfWork.cs" Line="11" Column="11" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="lab10" expanded="True">
-            <Node name="lab10" expanded="True">
-              <Node name="Program.cs" selected="True" />
+            <Node name="Catalog" expanded="True">
+              <Node name="DAL" expanded="True">
+                <Node name="DAL.Tests" expanded="True" />
+                <Node name="EF" expanded="True">
+                  <Node name="EFUnitOfWork.cs" selected="True" />
+                </Node>
+                <Node name="Repositories" expanded="True">
+                  <Node name="Impl" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="DAL.Tests" expanded="True" />
             </Node>
           </Node>
         </State>
